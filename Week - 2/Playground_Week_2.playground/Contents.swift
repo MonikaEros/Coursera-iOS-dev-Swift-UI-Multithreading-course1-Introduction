@@ -65,6 +65,10 @@ let subString = string.suffix(5)
 
 let stringFromSubString = String(subString)
 
+//MARK: - Flow Control
+/***************************************************************/
+
+
 for _ in 1...3 {
     print("hello")
 }
