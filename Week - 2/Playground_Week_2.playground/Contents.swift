@@ -137,6 +137,10 @@ default:
 
 print(val)
 
+
+//MARK: - Classes and Structures
+/***************************************************************/
+
 struct Resolution {
     var width = 0
     var height = 0
@@ -158,6 +162,8 @@ someResolution.width = 1280
 let vga = Resolution(width: 640, height: 480)
 print(vga)
 
+//MARK: - Enumeration
+/***************************************************************/
 
 enum CompassPoint {
     case north
@@ -227,6 +233,10 @@ enum ArithmeticExpression {
     indirect case multiplication(ArithmeticExpression, ArithmeticExpression)
 }
 
+
+//MARK: - Class vs Structure
+/***************************************************************/
+
 class DecimalNumber {
     var value = 0
 }
@@ -255,7 +265,9 @@ extension DecimalNumber {
     }
 }
 
-import UIKit
+
+//MARK: - Functions and Methods
+/***************************************************************/
 
 @discardableResult
 func usefulFunc(firstParam: Int = 0, secondParam: String = "", thirdParam: String) -> (firstResult: Int, secondResult: String) {
@@ -371,6 +383,9 @@ point.moveBy(x: 4, y: -2)
 
 point.reset()
 
+//MARK: - Subscripts
+/***************************************************************/
+
 
 class MyClass {
     class func generateText() -> String {
@@ -385,21 +400,7 @@ class MyClass {
         print("\(MyClass.generateText())")
     }
     
-    subscript(index: Int) -> Int {
-        get {
-            return 0
-        }
-        set(newValue) {
-        }
-    }
-    
-    subscript(index: String) -> Double {
-        return 0.0
-    }
-    
-    subscript(x: Int, y: Int, z: Int) -> String {
-        return ""
-    }
+
     
 }
 
@@ -440,3 +441,4 @@ let dictionary = [1 : "one",
                   3 : "three"]
 
 let item = dictionary[10] // nil
+

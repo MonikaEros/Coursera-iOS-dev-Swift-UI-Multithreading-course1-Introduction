@@ -18,7 +18,7 @@ let checker = Checker()
 // не принимает никаких параметров и просто возвращает строку "Hello, world!" (без кавычек).
 
 func firstFunction() -> String {
-    return "Hello, world!"
+        return "Hello, world!"
 }
 
 // Передача функции на проверку
@@ -35,7 +35,6 @@ checker.checkFirstFunction(function: firstFunction)
 func secondFunction(lhs: String, rhs: String) -> Int {
     let i1 = Int(lhs)!
     let i2 = Int(rhs)!
-    //print("\(i1)+\(i2)=\(i1+i2)")
     return (i1+i2)
 }
 
@@ -50,26 +49,28 @@ checker.checkSecondFunction(function: secondFunction)
 // заканчивается успешно. Поэтому не нужно использовать восклицательный знак.
 
 func thirdFunction(_ currency: Checker.Currency, _ amount: Int) -> String {
-    var c = ""
-    print("1: \(currency), 2: \(amount)")
-    switch currency {
-        case .rub:
-            c = "₽"
-        case .eur:
-            c = "€"
-        case .usd:
-            c = "$"
+        var c = ""
+        print("1: \(currency), 2: \(amount)")
+        switch currency {
+            case .rub:
+                c = "₽"
+            case .eur:
+                c = "€"
+            case .usd:
+                c = "$"
+        }
+        
+        var s = ""
+        if amount >= 0 {
+            s = String(describing: amount) + " " + c
+        } else {
+            s = "("+String(describing: (-amount)) + ")" + " " + c
+        }
+        print(s)
+        return s
     }
-    
-    var s = ""
-    if amount >= 0 {
-        s = String(describing: amount) + " " + c
-    } else {
-        s = "("+String(describing: (-amount)) + ")" + " " + c
-    }
-    print(s)
-    return s
-}
 
 // Передача третьей функции на проверку
 checker.checkThirdFunction(function: thirdFunction)
+
+// Answer: 1PgjGN9XeZB9OQqn
