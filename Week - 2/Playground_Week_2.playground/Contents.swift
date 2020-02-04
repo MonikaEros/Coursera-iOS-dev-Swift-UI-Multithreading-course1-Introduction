@@ -1,5 +1,8 @@
 import UIKit
 
+//MARK: - Data Types and Operators
+/***************************************************************/
+
 var str = "Hello, playground"
 
 2 * 2
@@ -28,7 +31,7 @@ if a != nil {
     c = b
 }
 
-c = (a     != nil) ? a! : b
+c = (a != nil) ? a! : b
 
 var d = [1,2,3,4,5,6,7]
 
@@ -37,6 +40,9 @@ d = d.reversed()
 for i in d {
     print(i)
 }
+
+//MARK: - Strings
+/***************************************************************/
 
 for _ in 1...10 {
     let stringWithIndent = """
