@@ -84,25 +84,20 @@ func secondFunction(arrayOfCirles: [Circle]) -> [Circle] {
     for circle in arrayOfCirles {
         switch circle.color {
         case .white:
-            print("White circle!")
             whiteCirles.append(circle)
         case .black:
-            print("Black circle!")
             let blackCircleRadius = circle.radius * 2
             var newCircle = circle
             newCircle.radius = blackCircleRadius
             blackCirles.append(newCircle)
         case .red:
-            print("Red circle!")
             redCirles.append(circle)
         case .green:
-            print("Green circle!")
             let blueCircleColor = Color.blue
             var newCircle = circle
             newCircle.color = blueCircleColor
             blueCirles.append(newCircle) // according to the task
         case .blue:
-            print("Blue circle!")
             blueCirles.append(circle)
         }
     }
@@ -113,9 +108,6 @@ func secondFunction(arrayOfCirles: [Circle]) -> [Circle] {
     newArrayOfCircles += blackCirles
     newArrayOfCircles += blueCirles
     
-    print(newArrayOfCircles.count)
-    
-    
     return newArrayOfCircles
     
     
@@ -125,3 +117,37 @@ var newListOfCircles = secondFunction(arrayOfCirles: listOfCircles)
 
 print(newListOfCircles.count)
 
+
+//MARK: - Third Function
+/***************************************************************/
+
+public struct Employee {
+
+    public let fullName: String
+
+    public let salary: String
+
+    public let company: String
+
+    public init(fullName: String, salary: String, company: String) {
+        self.fullName = fullName
+        self.salary = salary
+        self.company = company
+    }
+}
+
+/// Словарь в котором хранятся данные о сотруднике в виде:
+///
+///    {
+///       "fullName": String,
+///       "salary": String,
+///       "company": String
+///    }
+var EmployeeData: [String : String]
+
+
+/// Передайте в этот метод функцию которая преобразует массив словарей в структуры Employee.
+/// Порядок сотрудников должен остаться тем же. При этом если формат данных не совпадает с
+/// указанным выше, то такой словарь должен отбрасываться. Если ваше решение окажется правильным
+/// то в консоли вы увидите еще одну часть кодового слова.
+///
