@@ -94,7 +94,10 @@ func thirdFunction(employeeData: [Checker.EmployeeData]) -> [Checker.Employee] {
 
 checker.checkThirdFunction(function: thirdFunction)
 
-func fourthFunction() {
+func fourthFunction(names: [String]) -> [String : [String]] {
     
 }
 
+checker.checkFourthFunction(function: fourthFunction)
+
+// Answer : hDEKD6pYkJ1b
