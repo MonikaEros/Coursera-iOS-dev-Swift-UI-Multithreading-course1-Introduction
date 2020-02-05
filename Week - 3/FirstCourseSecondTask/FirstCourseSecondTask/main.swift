@@ -61,3 +61,16 @@ func secondFunction(arrayOfCirles: [Checker.Circle]) -> [Checker.Circle] {
 
 checker.checkSecondFunction(function: secondFunction)
 
+
+checker.checkThirdFunction { (dict: [Checker.EmployeeData]) -> [Checker.Employee] in
+    
+    var list: [Checker.Employee]
+    
+    return list
+}
+
+
+checker.checkFourthFunction { (array: [String]) -> [String : [String]] in
+    var bulls : [String : [String]]
+    return bulls
+}
