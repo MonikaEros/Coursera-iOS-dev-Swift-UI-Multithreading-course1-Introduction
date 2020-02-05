@@ -61,16 +61,40 @@ func secondFunction(arrayOfCirles: [Checker.Circle]) -> [Checker.Circle] {
 
 checker.checkSecondFunction(function: secondFunction)
 
+func thirdFunction(employeeData: [Checker.EmployeeData]) -> [Checker.Employee] {
+    
+    var newEmployeeList: [Checker.Employee] = []
 
-checker.checkThirdFunction { (dict: [Checker.EmployeeData]) -> [Checker.Employee] in
-    
-    var list: [Checker.Employee]
-    
-    return list
+    for item in employeeData {
+//        print(item)
+        var fullname = ""
+        var salary = ""
+        var company = ""
+              
+        for (key, value) in item {
+            switch key {
+            case "fullName":
+                fullname = value
+            case "salary":
+                salary = value
+            default:
+                company = value
+            }
+
+        }
+
+        if !(fullname.isEmpty) &&  !(salary.isEmpty) && !(company.isEmpty) && (Int(company) == nil) {
+            let employee = Checker.Employee(fullName: fullname, salary: salary, company: company)
+            newEmployeeList.append(employee)
+        }
+    }
+
+    return newEmployeeList
 }
 
+checker.checkThirdFunction(function: thirdFunction)
 
-checker.checkFourthFunction { (array: [String]) -> [String : [String]] in
-    var bulls : [String : [String]]
-    return bulls
+func fourthFunction() {
+    
 }
+

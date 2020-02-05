@@ -151,3 +151,53 @@ var EmployeeData: [String : String]
 /// указанным выше, то такой словарь должен отбрасываться. Если ваше решение окажется правильным
 /// то в консоли вы увидите еще одну часть кодового слова.
 ///
+
+func thirdFunction(employeeData: [[String : String]]) -> [Employee]{
+    var newEmployeeList: [Employee] = []
+
+    for item in employeeData {
+        var fullname = ""
+        var salary = ""
+        var company = ""
+        
+        print(item)
+      
+        for (key, value) in item {
+            print(key)
+            switch key {
+            case "fullName":
+                fullname = value
+            case "salary":
+                salary = value
+            default:
+                company = value
+            }
+
+        }
+        
+        print("salary is empty : ", salary.isEmpty)
+        
+        if !(fullname.isEmpty) &&  !(salary.isEmpty) && !(company.isEmpty) && (Int(company) == nil) {
+            let employee = Employee(fullName: fullname, salary: salary, company: company)
+            newEmployeeList.append(employee)
+        }
+        
+    }
+
+    return newEmployeeList
+}
+
+var employee1 = ["fullName": "Dorothy M. Lapointe", "salary": "10000", "company": "Copeland Sports"]
+var employee2 = ["fullName": "Roger A. Campuzano", "salry": "9000", "company": "Vibrant Man"]
+var employee3 = ["fullName": "Eileen J. Hansen", "salary": "5000"]
+var employee4 = ["salary": "12500", "company": "Silo", "fullName": "Michael K. Weise"]
+var employee5 = ["company": "Levitz Furniture", "fullName": "Donald M. Rodriguez", "salary": "10000"]
+var employee6 = ["age": "53", "fullName": "Mary R. McDonald", "company": "Rivera Property Maintenance", "salary": "9500"]
+var employee7 = ["fullName": "Joseph C. O\'Connor", "salary": "10500", "company": "Garden Master"]
+var listDibilov = [employee1, employee2, employee3, employee4, employee5, employee6, employee7]
+
+
+thirdFunction(employeeData: listDibilov)
+
+var check = (Int("53") != nil)
+print(check)
